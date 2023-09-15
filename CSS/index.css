@@ -58,3 +58,64 @@ body {
  #miitem:hover{
   background-color: white;
  }
+
+ #Dou{
+  height: 150px;
+  width: 150px;
+ }
+
+ #DouContenedor{
+  display: flex;
+  margin-top: 12%;
+ }
+
+.navbar2 {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  margin-top: 190px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.item2 {
+  float: left;
+}
+
+.item2 button {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px 50px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.item2 button:hover {
+  background-color: #0077c1;
+}
+
+#firstItem2 {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+#lastItem2 {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.item2 button img {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+}
