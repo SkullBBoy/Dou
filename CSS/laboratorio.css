@@ -1,57 +1,130 @@
 body {
-    background-image: url('../IMG/fondoazul.jpg');
-    background-size: cover;
- 
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+  background-image: url('../IMG/fondoazul.jpg');
+  background-size: cover;
 
-  .navbar {
-    background-color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100px;
-    margin-top: 5px;
-  }
-  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  .item {
-    float: left;
-  }
-  
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  margin-top: 5px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.item {
+  float: left;
+}
+
 /*   .item:nth-child(3):hover{
+background-color: #0077c1;
+} */
+
+.item a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px 50px;
+  height: 20px;
+}
+
+.item a:hover {
   background-color: #0077c1;
-  } */
-  
-  .item a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px 50px;
-    height: 20px;
-  }
-  
-  .item a:hover {
-    background-color: #0077c1;
-  }
-  
-  #firstItem {
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-  }
-  
-  #lastItem {
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-  }
-  
+}
+
+#firstItem {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+#lastItem {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+#miitem:hover{
+background-color: white;
+}
+
+#Dou{
+height: 150px;
+width: 150px;
+position: relative;
+z-index: 1;
+}
+
+#DouContenedor{
+display: flex;
+margin-top: 160px;
+}
+
+.navbar2 {
+background-color: #333;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 100px;
+margin-top: 160px;
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+
+.item2 {
+float: left;
+}
+
+.item2 button {
+display: block;
+color: white;
+text-decoration: none;
+padding: 25px 25px;
+background: none;
+border: none;
+cursor: pointer;
+}
+
+.item2 button:hover {
+background-color: #0077c1;
+}
+
+#firstItem2 {
+border-top-left-radius: 55px;
+border-bottom-left-radius: 55px;
+}
+
+#lastItem2 {
+border-top-right-radius: 55px;
+border-bottom-right-radius: 55px;
+}
+
+.item2 button img {
+width: 45px;
+height: 45px;
+margin: 0 auto;
+}
+
+.pelo{
+position: absolute;
+  width: 180px;
+  top: 174px;
+  margin-left: -12px;
+  z-index: 2;
+}
