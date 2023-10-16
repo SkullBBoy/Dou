@@ -1,5 +1,18 @@
-/* let volver = document.getElementById("firstItem");
-localStorage.setItem("position","dormitorio")
+let volver = document.getElementById("firstItem");
+let volver2= document.getElementById("miditem");
+let posicion= localStorage.getItem("position")
+/* let saldox= localStorage.getItem("saldo")
+
+function mostrarSaldo() {
+    const contadorArticulos = document.getElementById('saldo');
+    contadorArticulos.textContent = saldox;
+  }
+  mostrarSaldo() */
+
+  
+if(posicion=="index"){
+    posicion="../index"
+}
 
 
 
@@ -8,4 +21,5 @@ localStorage.setItem("position","dormitorio")
 
 
 
-volver= enlace.setAttribute('href', 'https://www.nueva-pagina.com') */
+volver.setAttribute("href", `${posicion}.html `);
+volver2.setAttribute('href', `${posicion}.html` );

@@ -1,5 +1,6 @@
+localStorage.setItem("position","index")
 const boton = document.getElementById("tienda");
-localStorage.setItem("position","dormitorio")
+
 
 
 

@@ -29,10 +29,6 @@ ul {
   float: left;
 }
 
-/*   .item:nth-child(3):hover{
-background-color: #0077c1;
-} */
-
 .item a {
   display: block;
   color: white;
@@ -55,76 +51,28 @@ background-color: #0077c1;
   border-bottom-right-radius: 25px;
 }
 
-#miitem:hover{
-background-color: white;
+h1{
+color: #0077c1;
+text-align: center;
+
 }
 
-#Dou{
-height: 150px;
-width: 150px;
-position: relative;
-z-index: 1;
+
+
+#contenedorTienda{
+  margin-top: 65px;
+  height: 420px;
+  width: 750px;
+  background-color: #333;
+  border-radius: 25px;
+ 
+  
 }
 
-#DouContenedor{
-display: flex;
-margin-top: 160px;
+.comida{
+
+  height: 90px;
+  width: 90px;
+  background-color: red;
 }
 
-.navbar2 {
-background-color: #333;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 100px;
-margin-top: 160px;
-}
-
-ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
-}
-
-.item2 {
-float: left;
-}
-
-.item2 button {
-display: block;
-color: white;
-text-decoration: none;
-padding: 25px 25px;
-background: none;
-border: none;
-cursor: pointer;
-}
-
-.item2 button:hover {
-background-color: #0077c1;
-}
-
-#firstItem2 {
-border-top-left-radius: 55px;
-border-bottom-left-radius: 55px;
-}
-
-#lastItem2 {
-border-top-right-radius: 55px;
-border-bottom-right-radius: 55px;
-}
-
-.item2 button img {
-width: 45px;
-height: 45px;
-margin: 0 auto;
-}
-
-.pelo{
-position: absolute;
-  width: 180px;
-  top: 174px;
-  margin-left: -12px;
-  z-index: 2;
-}
