@@ -1,0 +1,78 @@
+body {
+  background-image: url('../IMG/fondoazul.jpg');
+  background-size: cover;
+
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  margin-top: 5px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.item {
+  float: left;
+}
+
+.item a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px 50px;
+  height: 20px;
+}
+
+.item a:hover {
+  background-color: #0077c1;
+}
+
+#firstItem {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+#lastItem {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+h1{
+color: #0077c1;
+text-align: center;
+
+}
+
+
+
+#contenedorTienda{
+  margin-top: 65px;
+  height: 420px;
+  width: 750px;
+  background-color: #333;
+  border-radius: 25px;
+ 
+  
+}
+
+.comida{
+
+  height: 90px;
+  width: 90px;
+  background-color: red;
+}
+
