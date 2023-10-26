@@ -1,13 +1,12 @@
 let volver = document.getElementById("firstItem");
 let volver2= document.getElementById("miditem");
-let posicion= localStorage.getItem("position")
-/* let saldox= localStorage.getItem("saldo")
+let posicion= localStorage.getItem("position");
+let saldox= document.getElementById("saldo");
 
-function mostrarSaldo() {
-    const contadorArticulos = document.getElementById('saldo');
-    contadorArticulos.textContent = saldox;
-  }
-  mostrarSaldo() */
+
+//al hacer click en producto
+let saldoActual = 0;
+saldox.innerText = `Saldo: $${saldoActual}`
 
   
 if(posicion=="index"){

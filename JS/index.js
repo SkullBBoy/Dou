@@ -6,6 +6,16 @@ const overlay= document.getElementById("overlay")
 const linternafoto = document.getElementById("linternafoto")
 const prendido = localStorage.getItem("prendido")
 
+
+window.addEventListener("keydown", (event) => {
+  if (event.key == "ArrowRight") {
+    window.location.href = "./HTML/cocina.html";
+  }
+  if (event.key == "ArrowLeft") {
+    window.location.href = "./HTML/cuartojuegos.html"
+  }
+});
+
 function detectarPrendido(){
   if(prendido==1){
     overlay.style.background = 'rgba(0, 0, 0, 0)';
@@ -45,3 +55,4 @@ botonArmario.addEventListener('click', function() {
 boton.addEventListener('click', function() {
   window.location.href = "./HTML/tienda.html";
 });
+
