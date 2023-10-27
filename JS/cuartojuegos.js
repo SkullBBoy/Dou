@@ -1,6 +1,7 @@
 localStorage.setItem("position","cuartojuegos")
 const boton = document.getElementById("lastItem2");
 const boton2 = document.getElementById("miditem2")
+const boton3 = document.getElementById("firstItem2")
 const pelota = document.getElementById("pelota")
 
 
@@ -28,4 +29,7 @@ boton.addEventListener('click', function() {
   window.location.href = "tienda.html";
 });
 
+boton3.addEventListener('click', function() {
+  window.location.href = "juego.html";
+});
 

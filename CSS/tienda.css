@@ -42,13 +42,9 @@ ul {
 }
 
 #firstItem {
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-}
-
-#lastItem {
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-radius: 25px;
+  padding-right: 80px;
+  padding-left: 80px;
 }
 
 h1{
