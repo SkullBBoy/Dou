@@ -41,7 +41,15 @@ body {
   }
   
   #firstItem {
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+
+  #lastItem{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
     padding-right: 80px;
     padding-left: 80px;
   }
@@ -87,17 +95,26 @@ body {
 
 
 #objetoClick{
-  background-color: #0077c1;
+  
   display: none;
-  width: 65px;
-  height: 65px;
+  width: 75px;
+  height: 75px;
   position: absolute;
   transition: .2s all;
+}
+
+#imgClick{
+ 
+  width: 75px;
+  height: 75px;
+  
 }
  
 
 
-
+#mostrarSaldo{
+  display: none;
+}
 
 
 
