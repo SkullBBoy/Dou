@@ -67,21 +67,11 @@ color: #0077c1;
 
 
 
-#contenedorTienda{
-  margin-top: 65px;
-  height: 420px;
-  width: 750px;
-  background-color: #333;
-  border-radius: 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-}
+
 
 
 /*CSS grid*/
-.comida-container {
+#comida-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -90,6 +80,7 @@ color: #0077c1;
   width: 100%;
   justify-items: center;
   align-items: center;
+  opacity: 1;
   }
   
   .titulo-comida{
@@ -108,4 +99,91 @@ color: #0077c1;
   .comida-div8 { grid-area: 3 / 2 / 4 / 3; }
   .comida-div9 { grid-area: 3 / 3 / 4 / 4; }
 
+#contenedorTienda{
+    margin-top: 65px;
+    height: 420px;
+    width: 750px;
+    background-color: #333;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
 
+
+#contenedorTienda.cara-normal {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+#contenedorTienda.cara-girada {
+  transform: rotateY(180deg);
+}
+
+#contenedorTienda2{
+  margin-top: 65px;
+    height: 420px;
+    width: 750px;
+    background-color: #333;
+    border-radius: 25px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contenedorTienda2.cara-normal {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+#contenedorTienda2.cara-girada {
+  transform: rotateY(180deg);
+}
+
+
+#btnRotar{
+   
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: #333;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50px;
+  margin-top: 8px;
+  color: white;
+}
+
+#btnRotar:hover {
+  background-color: #0077c1;
+  color: white;
+  cursor: pointer;
+}
+
+#rotarImg{
+  width: 25px;
+  height: 25px;
+}
+
+
+#asa{
+  width: 100px;
+  height: 100px;
+  background-color: #0077c1;
+  display: none;
+}
+
+select {
+  width: 200px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

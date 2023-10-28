@@ -111,10 +111,15 @@ body {
   
 }
  
-
-
 #mostrarSaldo{
   display: none;
+}
+
+#peligroFoto{
+  
+  text-align: center;
+  height: 40px;
+  width: 40px;
 }
 
 
