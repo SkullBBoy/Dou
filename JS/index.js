@@ -5,7 +5,13 @@ const linterna= document.getElementById("miditem2");
 const overlay= document.getElementById("overlay")
 const linternafoto = document.getElementById("linternafoto")
 const prendido = localStorage.getItem("prendido")
+let Saldo =  JSON.parse(localStorage.getItem("Saldo"));
 
+if (Saldo !== null) {
+} else {
+  Saldo=0
+  localStorage.setItem("Saldo",Saldo);
+}
 
 window.addEventListener("keydown", (event) => {
   if (event.key == "ArrowRight") {

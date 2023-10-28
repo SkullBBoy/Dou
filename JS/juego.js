@@ -3,27 +3,38 @@ const elementosHoverA = document.querySelectorAll(".hoverA");
 const saldoNavbar = document.getElementById("mostrarSaldo");
 let audio = document.getElementById('audioElement');
 let cuadradoJuego = document.getElementById("objetoClick");
-let Saldo = localStorage.getItem("Saldo")
-let SaldoMostrar= getElementById("lastItem")
+let Saldo =  JSON.parse(localStorage.getItem("Saldo"));
+let SaldoMostrar= document.getElementById("lastItem");
+let aduioCash= document.getElementById("audioCash");
+aduioCash.src = "../Audio/Cash.mp3"; 
 
-if(Saldo){
+if (Saldo !== null) {
+} else {
   Saldo=0
-  localStorage.setItem("Saldo","0")
+  localStorage.setItem("Saldo",Saldo);
 }
 
-cuadradoJuego.addEventListener('click', function() {
-Saldo=Saldo+10
 SaldoMostrar.innerText= `Saldo: $${Saldo}`;
-localStorage.setItem("Saldo",Saldo)
+
+cuadradoJuego.addEventListener('click', function() {
+aduioCash.play()
+Saldo=Saldo+10
+localStorage.setItem("Saldo",Saldo);
+SaldoMostrar.innerText= `Saldo: $${Saldo}`;
 
 });
 
 function Juego(){
   let topRandom = Math.floor(Math.random() * (482 - 127 + 1)) + 127;
   let leftRandom = Math.floor(Math.random() * (950 - 265 + 1)) + 265;
+  cuadradoJuego.style.opacity = 1;
   cuadradoJuego.style.top = `${topRandom}px`;
   cuadradoJuego.style.left = `${leftRandom}px`;
-  console.log(cuadradoJuego.style.top);
+ 
+}
+
+function saldoVisible(){
+
 }
 
 botonIniciar.addEventListener('click', () => {
