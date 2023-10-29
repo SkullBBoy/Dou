@@ -6,8 +6,12 @@
     <title>Dou - Tienda</title>
     <link rel="stylesheet" href="../CSS/tienda.css">
     <link rel="shortcut icon" href="../IMG/logo.png" type="image/x-icon">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 <body>
+    <audio id="audioCash"></audio>
+    <audio id="audioFail"></audio>
     <nav class="navbar">
         <ul>
             <li class="item"><a href="" id="firstItem">🢀 Volver</a></li>
@@ -25,19 +29,23 @@
             <div class="comida-div1 titulo-comida">Comida</div>
             <div class="comida-div2 titulo-comida">Items</div>
             <div class="comida-div3 titulo-comida">Extras</div>
-            <div class="comida-div4"><img src="../IMG/food/burger.png" alt=""></div>
-            <div class="comida-div5"><img src="../IMG/food/burger.png" alt=""></div>
-            <div class="comida-div6"><img src="../IMG/food/burger.png" alt=""></div>
-            <div class="comida-div7"><img src="../IMG/food/burger.png" alt=""></div>
-            <div class="comida-div8"><img src="../IMG/food/burger.png" alt=""></div>
-            <div class="comida-div9"><img src="../IMG/food/burger.png" alt=""></div>
+            <div class="comida-div4"><img class="fotoTienda" id="choripan" src="../IMG/choripan.png" alt=""></div>
+            <div class="comida-div5"><img class="fotoTienda" id="milei" src="../IMG/peluca.png" alt=""></div>
+            <div class="comida-div6"><img class="fotoTienda" id="caraaleatoria" src="../IMG/caraaleatoria.png" alt=""></div>
+            <div class="comida-div7"><img class="fotoTienda" id="empanada" src="../IMG/empanada.png" alt=""></div>
+            <div class="comida-div8"><img class="fotoTienda" id="goku" src="../IMG/goku.png" alt=""></div>
+            <div class="comida-div9"><img class="fotoTienda" id="fondosAleatorios" src="../IMG/fondosAleatorios.png" alt=""></div>
         </div>
 
-        
+        <div id="infoPrecios">
+            <h1>$100</h1>
+            <h1>$150</h1>
+            <h1>$200</h1>
+        </div>
 
     </div>
 
-    <!-- <button id="btnRotar" onclick="rotarCara()"><img id="rotarImg" src="../IMG/volver.png" alt="" srcset=""></button> -->
+    
 
     <script src="../JS/tienda.js"></script>
 </body>
