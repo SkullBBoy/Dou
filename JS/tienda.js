@@ -29,15 +29,22 @@ function alertaNo() {
   audioFail.play()
 }
 
+function eliminarCompra(item) {
+  const index = carrito.indexOf(item);
+  if (index > -1) {
+    carrito.splice(index, 1);
+  }
+}
+
 if (saldo !== null) {
-  saldo = parseFloat(saldo); // Convierte el saldo de cadena a número
+  
 } else {
   saldo = 0;
   localStorage.setItem("Saldo", saldo);
 }
 
 if (compras !== null) {
-  carrito = JSON.parse(compras); // Convierte las compras de cadena a array
+  carrito = JSON.parse(compras);
 } else {
   localStorage.setItem("Compras", JSON.stringify(carrito));
 }
@@ -99,53 +106,61 @@ audioFail.play()
 });
 
 milei.addEventListener('click', function() {
-  if ((saldo - items < 0) || (carrito.includes("milei"))) {
-    if (saldo - items < 0) {
-      alertaNo();
-    }
-    if (carrito.includes("milei")) {
-      swal("Error", "Ya has adquirido el item de Milei", "error");
-audioFail.play()
-    }
+  if (carrito.includes("goku")) {
+    eliminarCompra("goku");
+  }
+  
+  if (carrito.includes("milei")) {
+    swal("Error", "Ya has adquirido el item de Milei", "error");
+    audioFail.play();
+  } else if (saldo < items) {
+    swal("Error", "No posees saldo suficiente", "error");
+    audioFail.play();
   } else {
     alertaSi();
     carrito.push("milei");
     localStorage.setItem("Compras", JSON.stringify(carrito));
     saldo = saldo - items;
+    actualizarSaldo();
   }
-  actualizarSaldo();
 });
 
 goku.addEventListener('click', function() {
-  if ((saldo - items < 0) || (carrito.includes("goku"))) {
-    if (saldo - items < 0) {
-      alertaNo();
-    }
-    if (carrito.includes("goku")) {
-      swal("Error", "Ya has adquirido el item de Goku", "error");
-audioFail.play()
-    }
+  if (carrito.includes("milei")) {
+    eliminarCompra("milei");
+  }
+  
+  if (carrito.includes("goku")) {
+    swal("Error", "Ya has adquirido el item de Goku", "error");
+    audioFail.play();
+  } else if (saldo < items) {
+    swal("Error", "No posees saldo suficiente", "error");
+    audioFail.play();
   } else {
     alertaSi();
     carrito.push("goku");
     localStorage.setItem("Compras", JSON.stringify(carrito));
     saldo = saldo - items;
+    actualizarSaldo();
   }
-  actualizarSaldo();
 });
 
+
+
 caraaleatoria.addEventListener('click', function() {
-  if ((saldo - extras < 0) || (carrito.includes("caraAleatoria"))) {
-    if (saldo - extras < 0) {
-      alertaNo();
-    }
-    if (carrito.includes("caraAleatoria")) {
-      swal("Error", "Ya has adquirido la cara aleatoria", "error");
-audioFail.play()
-    }
+  if (saldo - extras < 0) {
+    alertaNo();
   } else {
     alertaSi();
-    carrito.push("caraAleatoria");
+    if (!carrito.includes("caraAleatoria")) {
+      carrito.push("caraAleatoria");
+    }
+    let skinActual = localStorage.getItem("Skin");
+    let skin;
+    do {
+      skin = Math.floor(Math.random() * 4) + 1;
+    } while (skin === parseInt(skinActual));
+    localStorage.setItem("Skin", skin);
     localStorage.setItem("Compras", JSON.stringify(carrito));
     saldo = saldo - extras;
   }

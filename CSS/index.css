@@ -1,5 +1,5 @@
 body {
-    background-image: url('../IMG/fondoazul.jpg');
+    /* background-image: url('../IMG/fondoazul.jpg'); */
     background-size: cover;
  
     background-attachment: fixed;
@@ -121,13 +121,10 @@ ul {
   margin: 0 auto;
 }
 
-.pelo{
-  position: absolute;
-    width: 180px;
-    top: 174px;
-    margin-left: -12px;
-    z-index: 2;
-}
+
+
+
+
 
 #overlay{
   top: 0;
