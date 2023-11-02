@@ -122,9 +122,49 @@ margin: 0 auto;
 }
 
 #pelo{
-position: absolute;
-  width: 180px;
-  top: 174px;
-  margin-left: -12px;
+  display: none;
+  position: absolute;
+  width: 183px;
+  top: 171px;
+  margin-left: -14px;
   z-index: 2;
 }
+
+
+#pelo2{
+  display: none;
+  position: absolute;
+  width: 265px;
+  top: 120px;
+  margin-left: -59px;
+  z-index: 2;
+    
+}
+
+#divSeguidor {
+  display: none;
+  position: absolute;
+  
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%); 
+  z-index: 9;
+}
+
+#pelotaJuego{
+display: none;
+  
+  width: 50px;
+  height: 50px;
+
+}
+
+#pelota{
+  display: flex;
+    
+    width: 50px;
+    height: 50px;
+  
+  }

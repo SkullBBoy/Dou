@@ -8,9 +8,10 @@ let caraaleatoria = document.getElementById("caraaleatoria");
 let empanada = document.getElementById("empanada");
 let goku = document.getElementById("goku");
 let fondosAleatorios = document.getElementById("fondosAleatorios");
-let compras = localStorage.getItem("Compras");
+let compras = JSON.parse(localStorage.getItem("Compras"));
 let audioCash= document.getElementById("audioCash");
 let audioFail= document.getElementById("audioFail")
+let btnReiniciar =document.getElementById("btnReiniciar")
 let carrito = [];
 
 audioCash.src = "../Audio/Cash.mp3"; 
@@ -37,16 +38,25 @@ function eliminarCompra(item) {
 }
 
 if (saldo !== null) {
-  
 } else {
   saldo = 0;
   localStorage.setItem("Saldo", saldo);
 }
 
 if (compras !== null) {
-  carrito = JSON.parse(compras);
+  carrito = compras;
+  funcionFondos()
+  
 } else {
   localStorage.setItem("Compras", JSON.stringify(carrito));
+}
+
+function funcionFondos(){
+  if (compras.includes("fondosAleatorios")) {
+    let fondo = Math.floor(Math.random() * 16) + 1;
+    let rutaFondo = "../IMG/fondos/" + fondo + ".jpg";
+    document.body.style.backgroundImage = "url('" + rutaFondo + "')";
+  }
 }
 
 saldox.innerText = `Saldo: $${saldo}`;
@@ -177,11 +187,25 @@ fondosAleatorios.addEventListener('click', function() {
       audioFail.play()
     }
   } else {
+    
     alertaSi();
     carrito.push("fondosAleatorios");
     localStorage.setItem("Compras", JSON.stringify(carrito));
+    
+    let fondo = Math.floor(Math.random() * 16) + 1;
+    let rutaFondo = "../IMG/fondos/" + fondo + ".jpg";
+    document.body.style.backgroundImage = "url('" + rutaFondo + "')";
     saldo = saldo - extras;
+    
   }
   actualizarSaldo();
+});
+
+
+btnReiniciar.addEventListener('click', function() {
+swal("Compras", "Eliminadas con exito", "success");
+ carrito=[]
+ localStorage.setItem("Compras", JSON.stringify(carrito));
+ document.body.style.backgroundImage = "url('../IMG/fondoazul.jpg')";
 });
 

@@ -1,5 +1,5 @@
 body {
- 
+  background-image: url('../IMG/fondoazul.jpg');
   background-size: cover;
 
   background-attachment: fixed;
@@ -123,9 +123,20 @@ margin: 0 auto;
 }
 
 #pelo{
-position: absolute;
-  width: 180px;
-  top: 174px;
-  margin-left: -12px;
+  display: none;
+  position: absolute;
+  width: 183px;
+  top: 171px;
+  margin-left: -14px;
   z-index: 2;
+}
+
+#pelo2{
+  display: none;
+  position: absolute;
+  width: 265px;
+  top: 120px;
+  margin-left: -59px;
+  z-index: 2;
+    
 }

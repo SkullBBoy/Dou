@@ -59,6 +59,25 @@ body {
   background-color: white;
  }
 
+ #pelo{
+  display: none;
+  position: absolute;
+  width: 183px;
+  top: 171px;
+  margin-left: -14px;
+  z-index: 2;
+}
+
+#pelo2{
+  display: none;
+  position: absolute;
+  width: 265px;
+  top: 120px;
+  margin-left: -59px;
+  z-index: 2;
+    
+}
+
  #Dou{
   height: 150px;
   width: 150px;

@@ -5,6 +5,8 @@ const linterna= document.getElementById("miditem2");
 const overlay= document.getElementById("overlay")
 const linternafoto = document.getElementById("linternafoto")
 const prendido = localStorage.getItem("prendido")
+let audioDormir=document.getElementById("audioDormir")
+
 
 //              DOU SKIN ---------------------------------------------------
 let Saldo =  JSON.parse(localStorage.getItem("Saldo"));
@@ -12,24 +14,18 @@ let Compras = localStorage.getItem("Compras")
 let Dou = document.getElementById("Dou")
 let carrito=[]
 let pelo= document.getElementById("pelo")
+let pelo2= document.getElementById("pelo2")
+
 
 if (Compras !== null) {
   if(Compras.includes("milei")){ 
-    pelo.src="./IMG/peluca.png"
-    pelo.style.position="absolute"
-    pelo.style.width="180px"
-    pelo.style.top="174px"
-    pelo.style.left="545px"
-    pelo.style.zIndex="2"
+    pelo.style.display="flex"
+    pelo2.style.display="none"
+  
     }
     else if(Compras.includes("goku")){
-      pelo.src="./IMG/goku.png"
-      pelo.style.position="absolute"
-      pelo.style.width="267px"
-      pelo.style.top="111px"
-      pelo.style.left="495px"
-      pelo.style.zIndex="2"
-     
+      pelo2.style.display="flex"
+    pelo.style.display="none"
     }
     if(Compras.includes("caraAleatoria")){
     let num=localStorage.getItem("Skin")
@@ -44,10 +40,7 @@ if (Compras !== null) {
       document.body.style.backgroundImage = "url('../IMG/fondoazul.jpg')";
       
     } 
-    if(Dou.src==""){
-      Dou.src="./IMG/skinbase.png"
-      
-    }
+    
  } else {
   localStorage.setItem("Compras", JSON.stringify(carrito));
 }
@@ -84,6 +77,15 @@ function detectarPrendido(){
     overlay.style.background = 'rgba(0, 0, 0, 0)';
     linternafoto.src="./IMG/light_on.png"
     localStorage.setItem("prendido","1")
+    audioDormir.pause();
+    audioDormir.currentTime = 0; 
+    if(Compras.includes("caraAleatoria")){
+      let num=localStorage.getItem("Skin")
+      Dou.src="./IMG/skins/"+num+".png";
+      }
+      else{
+        Dou.src="./IMG/skinbase.png";
+      }
 
   }
   else if(prendido==0){
@@ -91,6 +93,8 @@ function detectarPrendido(){
     linternafoto.src="./IMG/light_off.png"
     linterna.style.zIndex='999'
     localStorage.setItem("prendido","0")
+    audioDormir.play()
+    Dou.src="./IMG/dormir.png"
   }
 }
 
@@ -102,12 +106,27 @@ linterna.addEventListener('click', function() {
     overlay.style.background = 'rgba(0, 0, 0, 0)';
     linternafoto.src="./IMG/light_on.png"
     localStorage.setItem("prendido","1")
+    
+    audioDormir.pause();
+    audioDormir.currentTime = 0; 
+    if(Compras.includes("caraAleatoria")){
+      let num=localStorage.getItem("Skin")
+      Dou.src="./IMG/skins/"+num+".png";
+      }
+      else{
+        Dou.src="./IMG/skinbase.png";
+      }
   } else {
     overlay.style.background = 'rgba(0, 0, 0, 0.8)';
     linternafoto.src="./IMG/light_off.png"
     linterna.style.zIndex='999'
     localStorage.setItem("prendido","0")
+    audioDormir.play()
+    Dou.src="./IMG/dormir.png"
   }
+
+
+
 });
 
 botonArmario.addEventListener('click', function() {

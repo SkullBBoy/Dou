@@ -10,6 +10,11 @@ let imgClick= document.getElementById("imgClick");
 let contenedorJuego =document.getElementById("contenedorJuego");
 aduioCash.src = "../Audio/Cash.mp3"; 
 
+
+let fondoCuarto=localStorage.getItem("fondoCuarto")
+document.body.style.backgroundImage = "url('" + fondoCuarto + "')";
+
+
 if (Saldo !== null) {
 } else {
   Saldo=0
@@ -20,7 +25,7 @@ SaldoMostrar.innerText= `Saldo: $${Saldo}`;
 
 cuadradoJuego.addEventListener('click', function() {
 aduioCash.play()
-Saldo=Saldo+10
+Saldo=Saldo+20
 localStorage.setItem("Saldo",Saldo);
 SaldoMostrar.innerText= `Saldo: $${Saldo}`;
 
@@ -85,6 +90,9 @@ botonIniciar.addEventListener('click', () => {
     audio.currentTime = 0; 
     audio.play(); 
   });
+  let fondo = Math.floor(Math.random() * 16) + 1;
+  let rutaFondo = "../IMG/fondos/" + fondo + ".jpg";
+ document.body.style.backgroundImage = "url('" + rutaFondo + "')";
   cuadradoJuego.style.display = "block";
   saldoNavbar.style.display="flex";
   intervalo = setInterval(Juego, 800);
