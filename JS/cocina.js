@@ -1,6 +1,10 @@
 localStorage.setItem("position","cocina")
 const boton = document.getElementById("lastItem2");
-
+let botonComida= document.getElementById("miditem2")
+let boca = document.getElementById("boca")
+let audioComer= document.getElementById("audioComer")
+audioComer.src="../Audio/Comer.mp3"
+let itemComida= document.getElementById("itemComida")
 //------------------------------------------------------------------- DOU JS
 let Saldo =  JSON.parse(localStorage.getItem("Saldo"));
 let Compras = localStorage.getItem("Compras")
@@ -8,6 +12,8 @@ let Dou = document.getElementById("Dou")
 let carrito=[]
 let pelo= document.getElementById("pelo")
 let pelo2= document.getElementById("pelo2")
+/* audioDormir.pause();
+audioDormir.currentTime = 0; */ 
 
   if (Compras != null) {
     if(Compras.includes("milei")){ 
@@ -55,11 +61,33 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
+if(Compras.includes("choripan")){
+  itemComida.src="../IMG/choripan.png"
+  itemComida.addEventListener('click', function() {
+    boca.style.display="flex"
+
+
+  });
+  
+  
+}
+else if(Compras.includes("empanada")){
+  itemComida.src="../IMG/empanada.png"
+  botonComida.addEventListener('click', function() {
+ boca.style.display="flex"
+audioComer.play()
+setTimeout(() => {
+  itemComida.src="../IMG/vacio.png"
+}, 2000);
+
+  });
+  
+}
 
 
 
-
-
+/* itemComida.src="../IMG/choripan.png"
+" */
 
 boton.addEventListener('click', function() {
   window.location.href = "tienda.html";

@@ -77,7 +77,7 @@ function actualizarSaldo() {
 }
 
 choripan.addEventListener('click', function() {
-  if ((saldo - comidas < 0) || (carrito.includes("choripan"))) {
+  /* if ((saldo - comidas < 0) || (carrito.includes("choripan"))) {
 
     if(saldo - comidas < 0){
       alertaNo();
@@ -94,11 +94,28 @@ audioFail.play()
     localStorage.setItem("Compras", JSON.stringify(carrito));
     saldo = saldo - comidas;
   }
-  actualizarSaldo();
+  actualizarSaldo(); */
+  if (carrito.includes("empanada")) {
+    eliminarCompra("empanada");
+  }
+  
+  if (carrito.includes("choripan")) {
+    swal("Error", "Ya has adquirido el item de choripan", "error");
+    audioFail.play();
+  } else if (saldo < items) {
+    swal("Error", "No posees saldo suficiente", "error");
+    audioFail.play();
+  } else {
+    alertaSi();
+    carrito.push("choripan");
+    localStorage.setItem("Compras", JSON.stringify(carrito));
+    saldo = saldo - items;
+    actualizarSaldo();
+  }
 });
 
 empanada.addEventListener('click', function() {
-  if ((saldo - comidas < 0) || (carrito.includes("empanada"))) {
+ /*  if ((saldo - comidas < 0) || (carrito.includes("empanada"))) {
     if (saldo - comidas < 0) {
       alertaNo();
     }
@@ -112,7 +129,24 @@ audioFail.play()
     localStorage.setItem("Compras", JSON.stringify(carrito));
     saldo = saldo - comidas;
   }
-  actualizarSaldo();
+  actualizarSaldo(); */
+  if (carrito.includes("choripan")) {
+    eliminarCompra("choripan");
+  }
+  
+  if (carrito.includes("empanada")) {
+    swal("Error", "Ya has adquirido el item de empanada", "error");
+    audioFail.play();
+  } else if (saldo < items) {
+    swal("Error", "No posees saldo suficiente", "error");
+    audioFail.play();
+  } else {
+    alertaSi();
+    carrito.push("empanada");
+    localStorage.setItem("Compras", JSON.stringify(carrito));
+    saldo = saldo - items;
+    actualizarSaldo();
+  }
 });
 
 milei.addEventListener('click', function() {
