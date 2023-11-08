@@ -129,10 +129,6 @@ linterna.addEventListener('click', function() {
 
 });
 
-botonArmario.addEventListener('click', function() {
-  window.location.href = "./HTML/armario.html";
-});
-
 
 boton.addEventListener('click', function() {
   window.location.href = "./HTML/tienda.html";
