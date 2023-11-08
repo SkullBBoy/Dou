@@ -64,13 +64,7 @@ window.addEventListener("keydown", (event) => {
 
 
 
-boton2.addEventListener('click', function() {
-  if (pelota.src.endsWith("vacio.png")) {
-    pelota.src = "../IMG/pelota.png";
-  } else {
-    pelota.src = "../IMG/vacio.png";
-  }
-});
+
 
 
 boton.addEventListener('click', function() {
