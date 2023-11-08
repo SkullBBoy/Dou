@@ -7,7 +7,7 @@ audioComer.src="../Audio/Comer.mp3"
 let itemComida= document.getElementById("itemComida")
 //------------------------------------------------------------------- DOU JS
 let Saldo =  JSON.parse(localStorage.getItem("Saldo"));
-let Compras = localStorage.getItem("Compras")
+let Compras = JSON.parse(localStorage.getItem("Compras"));
 let Dou = document.getElementById("Dou")
 let carrito=[]
 let pelo= document.getElementById("pelo")
@@ -63,22 +63,40 @@ window.addEventListener("keydown", (event) => {
 
 if(Compras.includes("choripan")){
   itemComida.src="../IMG/choripan.png"
-  itemComida.addEventListener('click', function() {
-    boca.style.display="flex"
+  botonComida.addEventListener('click', function() {
+
+    if(Compras.includes("choripan")){
+      boca.style.display="flex"
+      audioComer.play()
+      setTimeout(() => {
+        boca.style.display="none"
+        itemComida.src="../IMG/vacio.png"
+        eliminarItem("choripan");
+        const ComprasActualizadas = JSON.stringify(Compras);
+        localStorage.setItem("Compras", ComprasActualizadas);
+      }, 2000);
+    }
 
 
   });
-  
-  
 }
 else if(Compras.includes("empanada")){
   itemComida.src="../IMG/empanada.png"
   botonComida.addEventListener('click', function() {
- boca.style.display="flex"
-audioComer.play()
-setTimeout(() => {
-  itemComida.src="../IMG/vacio.png"
-}, 2000);
+
+    if(Compras.includes("empanada")){
+      boca.style.display="flex"
+      audioComer.play()
+      setTimeout(() => {
+        boca.style.display="none"
+        itemComida.src="../IMG/vacio.png"
+        eliminarItem("empanada");
+        const ComprasActualizadas = JSON.stringify(Compras);
+        localStorage.setItem("Compras", ComprasActualizadas);
+      }, 2000);
+    }
+    
+
 
   });
   
@@ -92,3 +110,10 @@ setTimeout(() => {
 boton.addEventListener('click', function() {
   window.location.href = "tienda.html";
 });
+
+function eliminarItem(elemento) {
+  const index = Compras.indexOf(elemento);
+  if (index > -1) {
+    Compras.splice(index, 1);
+  } 
+}

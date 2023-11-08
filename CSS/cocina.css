@@ -25,6 +25,11 @@ ul {
   overflow: hidden;
 }
 
+#firstItem{
+border-bottom-left-radius: 25px;
+border-top-left-radius: 25px;
+}
+
 .item {
   float: left;
 }
@@ -45,15 +50,17 @@ background-color: #0077c1;
   background-color: #0077c1;
 }
 
-#firstItem {
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+#miditem2 {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 
 #lastItem {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
 }
+
+
 
 #miitem:hover{
 background-color: white;
@@ -114,6 +121,8 @@ border-bottom-left-radius: 55px;
 border-top-right-radius: 55px;
 border-bottom-right-radius: 55px;
 }
+
+
 
 .item2 button img {
 width: 45px;
