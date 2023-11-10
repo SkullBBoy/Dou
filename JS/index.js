@@ -36,10 +36,7 @@ if (Compras !== null) {
       let rutaFondo = "./IMG/fondos/" + fondo + ".jpg";
       document.body.style.backgroundImage = "url('" + rutaFondo + "')";
     }
-    else{
-      document.body.style.backgroundImage = "url('../IMG/fondoazul.jpg')";
-      
-    } 
+    
     
  } else {
   localStorage.setItem("Compras", JSON.stringify(carrito));

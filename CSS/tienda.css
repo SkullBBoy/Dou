@@ -1,7 +1,6 @@
 body {
   background-image: url('../IMG/fondoazul.jpg');
   background-size: cover;
-
   background-attachment: fixed;
   display: flex;
   align-items: center;

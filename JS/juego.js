@@ -9,11 +9,16 @@ let aduioCash= document.getElementById("audioCash");
 let imgClick= document.getElementById("imgClick");
 let contenedorJuego =document.getElementById("contenedorJuego");
 aduioCash.src = "../Audio/Cash.mp3"; 
+let Compras = localStorage.getItem("Compras")
 
 
-let fondoCuarto=localStorage.getItem("fondoCuarto")
-document.body.style.backgroundImage = "url('" + fondoCuarto + "')";
-
+if (Compras !== null) {
+  if (Compras.includes("fondosAleatorios")) {
+    let fondo = Math.floor(Math.random() * 16) + 1;
+    let rutaFondo = "../IMG/fondos/" + fondo + ".jpg";
+    document.body.style.backgroundImage = "url('" + rutaFondo + "')";
+  }
+}
 
 if (Saldo !== null) {
 } else {
@@ -73,7 +78,7 @@ function Juego(){
 botonIniciar.addEventListener('click', () => {
   document.body.style.backgroundImage = `url("../IMG/fondojuego.jpg")`;
   botonIniciar.style.display = "none";
-  elementosHoverA.forEach(elemento => {               //
+  /* elementosHoverA.forEach(elemento => {               //
     elemento.addEventListener("mouseenter", () => {   // Cambiar el Hover
       elemento.style.backgroundColor = "black";
       elemento.style.color = "white";
@@ -83,16 +88,14 @@ botonIniciar.addEventListener('click', () => {
       elemento.style.backgroundColor = "";
       elemento.style.color = "white";
     });
-  });                                                // Fin cambiar el hover
+  });                                                // Fin cambiar el hover */
   audio.src = "../Audio/Musicajuego.mp3"; 
   audio.play(); 
   audio.addEventListener("ended", function() {
     audio.currentTime = 0; 
     audio.play(); 
   });
-  let fondo = Math.floor(Math.random() * 16) + 1;
-  let rutaFondo = "../IMG/fondos/" + fondo + ".jpg";
- document.body.style.backgroundImage = "url('" + rutaFondo + "')";
+  
   cuadradoJuego.style.display = "block";
   saldoNavbar.style.display="flex";
   intervalo = setInterval(Juego, 800);

@@ -1,5 +1,5 @@
 body {
-    background-image: url("./IMG/fondoazul.jpg");
+  background-image: url('../IMG/fondoazul.jpg');
     background-size: cover;
     
     background-attachment: fixed;
